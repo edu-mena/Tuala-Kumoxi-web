@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tuala Kumoxi — Agricultura com visão. Produção com propósito.</title>
+<meta name="description" content="Empresa agropecuária angolana orientada para a produção, transformação e comercialização agrícola.">
+<link rel="icon" type="image/png" href="src/logo/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!--
+  ============================================================
+  COMO COLOCAR AS IMAGENS
+  ============================================================
+  Todos os slots de imagem seguem o mesmo padrão:
+
+      <div class="frame__img" data-par data-speed="0.16" data-label="..."></div>
+
+  Substitua por:
+
+      <img class="frame__img" data-par data-speed="0.16"
+           src="imagens/nome.jpg" alt="Descrição da imagem">
+
+  Mantenha SEMPRE a classe .frame__img e os atributos data-par / data-speed —
+  é o que activa o efeito de parallax. Não é preciso mexer no CSS.
+
+  Para vídeo no hero:
+      <video class="frame__img" data-par data-speed="0.14"
+             autoplay muted loop playsinline src="video/hero.mp4"></video>
+
+  data-speed: 0.08 (subtil) a 0.30 (acentuado).
+  Cada slot indica em data-label o assunto e o rácio sugerido.
+  ============================================================
+-->
+
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a href="#topo" class="brand"><img class="brand__icon" src="src/logo/icon.png" alt=""><b style="font-weight: 900;">TUALA KUMOXI</b></a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#areas">Áreas de actuação</a>
+      <a href="#modelo">Modelo de negócio</a>
+      <a href="#lideranca">Liderança</a>
+      <a href="#impacto">Impacto</a>
+    </nav>
+    <div class="nav__cta">
+      <a href="#parcerias" class="btn">Falar connosco
+        <i class="arw" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </i></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <nav>
+    <a href="#areas">Áreas de actuação</a>
+    <a href="#modelo">Modelo de negócio</a>
+    <a href="#lideranca">Liderança</a>
+    <a href="#impacto">Impacto</a>
+    <a href="#parcerias">Parcerias</a>
+  </nav>
+  <a href="#parcerias" class="btn" style="align-self:flex-start">Falar connosco
+    <i class="arw" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+    </i></a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="topo">
+  <div class="frame vid-frame">
+    <!-- SLOT 1 · vídeo de fundo, reprodução nativa em loop -->
+    <video class="frame__img" data-par data-speed="0.16" data-autosound
+           autoplay muted loop playsinline preload="auto"
+           src="src/hero/hero-video.mp4"></video>
+  </div>
+  <div class="hero__scrim"></div>
+  <!-- fora do .frame de propósito: o .frame isola o seu próprio stacking context,
+       e ficaria por baixo do .hero__scrim (que tem z-index próprio) -->
+  <button type="button" class="vid-frame__sound hero__sound" data-sound-toggle aria-label="Activar som" aria-pressed="false">
+    <svg class="ico-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+    <svg class="ico-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+  </button>
+
+  <div class="hero__body">
+    <h1 class="hero__title" id="heroTitle">
+      <span class="mask"><span>Produzir, Transformar & Criar Valor.</span></span>
+    </h1>
+  </div>
+  <div class="hero__cue" aria-hidden="true">Deslize<i></i></div>
+</section>
+
+<!-- ============ ÁREAS DE ACTUAÇÃO (scroll horizontal) ============ -->
+<section class="htrack sec--grey" id="areas" data-htrack>
+
+  <div class="wrap" aria-hidden="true">
+    <svg class="squiggle squiggle--r" viewBox="0 0 400 120" data-draw>
+      <path d="M6 12c70 8 96 44 60 62-30 15-48-6-24-22 40-27 138-6 210 26 26 12 44 22 54 32"/>
+      <path d="M292 108l14 4 4-16"/>
+    </svg>
+  </div>
+
+  <div class="htrack__sticky">
+    <div class="wrap head head--center" style="margin-bottom:0" data-rev>
+      <h1 style="margin-top:.8rem; margin-bottom: 1rem">Da terra ao mercado</h1>
+    </div>
+
+    <div class="htrack__rail" data-rail>
+      <article class="flip" tabindex="0">
+        <div class="flip__inner">
+          <div class="flip__face flip__face--front">
+            <div class="frame"><img class="frame__img" src="src/passos/1.png" alt="Produção agrícola"></div>
+            <div class="flip__label"><span>01</span><h3>Produção agrícola</h3></div>
+          </div>
+          <div class="flip__face flip__face--back">
+            <img class="flip__back-img" src="src/passos/1.png" alt="" aria-hidden="true">
+            <div class="flip__back-scrim"></div>
+            <div class="flip__back-content">
+              <p class="card__num">01</p>
+              <h3>Produção agrícola</h3>
+              <p>Culturas com elevado potencial comercial e importância para o consumo nacional, escolhidas segundo solo, água, localização e procura.</p>
+              <ul><li>Cereais</li><li>Leguminosas</li><li>Tubérculos</li><li>Hortícolas</li><li>Fruticultura</li><li>Café</li></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip" tabindex="0">
+        <div class="flip__inner">
+          <div class="flip__face flip__face--front">
+            <div class="frame"><img class="frame__img" src="src/passos/2.png" alt="Agropecuária"></div>
+            <div class="flip__label"><span>02</span><h3>Agropecuária</h3></div>
+          </div>
+          <div class="flip__face flip__face--back">
+            <img class="flip__back-img" src="src/passos/2.png" alt="" aria-hidden="true">
+            <div class="flip__back-scrim"></div>
+            <div class="flip__back-content">
+              <p class="card__num">02</p>
+              <h3>Agropecuária</h3>
+              <p>Integração progressiva das actividades agrícolas e pecuárias, para maior aproveitamento dos recursos da exploração e diversificação das receitas.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip" tabindex="0">
+        <div class="flip__inner">
+          <div class="flip__face flip__face--front">
+            <div class="frame"><img class="frame__img" src="src/passos/3.png" alt="Transformação agroindustrial"></div>
+            <div class="flip__label"><span>03</span><h3>Transformação agroindustrial</h3></div>
+          </div>
+          <div class="flip__face flip__face--back">
+            <img class="flip__back-img" src="src/passos/3.png" alt="" aria-hidden="true">
+            <div class="flip__back-scrim"></div>
+            <div class="flip__back-content">
+              <p class="card__num">03</p>
+              <h3>Transformação agroindustrial</h3>
+              <p>Evoluir da produção primária para o processamento: milho em farinha, fruta processada e embalada, mandioca em produtos derivados.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip" tabindex="0">
+        <div class="flip__inner">
+          <div class="flip__face flip__face--front">
+            <div class="frame"><img class="frame__img" src="src/passos/4.png" alt="Comercialização e distribuição"></div>
+            <div class="flip__label"><span>04</span><h3>Comercialização e distribuição</h3></div>
+          </div>
+          <div class="flip__face flip__face--back">
+            <img class="flip__back-img" src="src/passos/4.png" alt="" aria-hidden="true">
+            <div class="flip__back-scrim"></div>
+            <div class="flip__back-content">
+              <p class="card__num">04</p>
+              <h3>Comercialização e distribuição</h3>
+              <p>Canais próprios e parcerias para colocar a produção no mercado, reduzindo intermediários desnecessários e aumentando a eficiência da cadeia.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="flip" tabindex="0">
+        <div class="flip__inner">
+          <div class="flip__face flip__face--front">
+            <div class="frame"><img class="frame__img" src="src/passos/5.png" alt="Tecnologia no campo"></div>
+            <div class="flip__label"><span>05</span><h3>Tecnologia no campo</h3></div>
+          </div>
+          <div class="flip__face flip__face--back">
+            <img class="flip__back-img" src="src/passos/5.png" alt="" aria-hidden="true">
+            <div class="flip__back-scrim"></div>
+            <div class="flip__back-content">
+              <p class="card__num">05</p>
+              <h3>Tecnologia no campo</h3>
+              <p>Mecanização, irrigação e ferramentas de agricultura de precisão, aplicadas sempre que economicamente viáveis.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="htrack__bar" aria-hidden="true"><i data-progress></i></div>
+  </div>
+</section>
+
+<!-- ============ CADEIA DE VALOR ============ -->
+<section class="sec" id="oportunidade">
+  <div class="wrap split">
+    <div class="split__media">
+      <div class="frame frame--5x6" data-rev>
+        <img class="frame__img" src="src/about/about.png" alt="Vista aérea da exploração agrícola">
+      </div>
+    </div>
+    <div class="split__copy">
+      <h2 data-rev data-d="1">Não é só cultivar e vender</h2>
+      <p class="lede" data-rev data-d="2">A Tuala Kumoxi trabalha numa lógica de cadeia de valor. Este modelo aumenta o valor económico da produção, reduz perdas, melhora a previsibilidade do negócio e aproxima o produtor dos grandes mercados consumidores.</p>
+      <div class="chain" data-rev data-d="3">
+        <span>Terra</span><i>→</i><span>Produção</span><i>→</i><span>Transformação</span><i>→</i><span>Armazenamento</span><i>→</i><span>Comercialização</span><i>→</i><span>Mercado</span>
+      </div>
+      <a href="#modelo" class="btn btn--ghost" data-rev data-d="4">Ver o modelo de negócio
+        <i class="arw" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MISSÃO / VISÃO ============ -->
+<section class="sec sec--tight sec--dark sec--photo" id="missao-visao">
+  <div class="frame" aria-hidden="true">
+    <img class="frame__img" data-par data-speed="0.14" src="src/missao/missao.jfif" alt="">
+  </div>
+  <div class="wrap cols2">
+    <div data-rev>
+      <p class="eyebrow">Missão</p>
+      <p style="font-family:var(--display);font-size:var(--step-2);line-height:1.15;margin-top:1rem;max-width:20ch">Produzir alimentos com qualidade.</p>
+      <p class="lede" style="margin-top:1rem">Com práticas agrícolas eficientes e sustentáveis, contribuindo para a segurança alimentar nacional, geração de emprego, desenvolvimento das comunidades rurais e crescimento da economia não petrolífera.</p>
+    </div>
+    <div data-rev data-d="2">
+      <p class="eyebrow">Visão</p>
+      <p style="font-family:var(--display);font-size:var(--step-2);line-height:1.15;margin-top:1rem;max-width:20ch">Ser uma referência nacional.</p>
+      <p class="lede" style="margin-top:1rem">Reconhecida pela qualidade da produção, capacidade de gestão, inovação, responsabilidade social e capacidade de estabelecer parcerias estratégicas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section class="sec" id="galeria">
+  <div class="wrap split">
+    <div class="split__media">
+      <!-- pilha de fotos: arrastar a da frente envia-a para trás; clicar abre o modal -->
+      <div class="stack-photos" data-stack data-rev>
+        <button type="button" class="frame frame--4x5 stack-photos__card" data-stack-card aria-label="Ver fotografia ampliada — produção agrícola">
+          <img class="frame__img" src="src/passos/1.png" alt="Produção agrícola no terreno">
+        </button>
+        <button type="button" class="frame frame--4x5 stack-photos__card" data-stack-card aria-label="Ver fotografia ampliada — transformação agroindustrial">
+          <img class="frame__img" src="src/passos/3.png" alt="Transformação agroindustrial">
+        </button>
+        <button type="button" class="frame frame--4x5 stack-photos__card" data-stack-card aria-label="Ver fotografia ampliada — comercialização">
+          <img class="frame__img" src="src/passos/4.png" alt="Comercialização e distribuição">
+        </button>
+        <button type="button" class="frame frame--4x5 stack-photos__card" data-stack-card aria-label="Ver fotografia ampliada — vista aérea">
+          <img class="frame__img" src="src/about/about.png" alt="Vista aérea da exploração agrícola">
+        </button>
+      </div>
+    </div>
+    <div class="split__copy">
+      <p class="eyebrow" data-rev>Galeria</p>
+      <h2 data-rev data-d="1">No terreno, por toda Angola</h2>
+      <p class="lede" data-rev data-d="2">Da preparação da terra à colheita, a operação da Tuala Kumoxi estende-se por várias províncias — cada fase documentada, cada campanha registada.</p>
+      <p class="lede" style="font-size:var(--step--1);color:var(--ink-45)" data-rev data-d="3">Arraste uma fotografia para a enviar para trás da pilha. Clique para ampliar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- modal — fotografia ampliada -->
+<div class="modal" id="galeriaModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Fotografia ampliada">
+  <div class="modal__backdrop" data-modal-backdrop></div>
+  <div class="modal__body">
+    <button type="button" class="modal__close" data-modal-close aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <img src="" alt="">
+  </div>
+</div>
+
+
+<!-- ============ DIFERENCIAL — vitrine, um pilar de cada vez ============ -->
+<section class="sec" id="diferencial">
+  <div class="wrap">
+    <div class="pshow" data-pshow data-rev>
+      <div class="pshow__stage">
+        <article class="pshow__slide is-active" data-pshow-slide>
+          <div class="pshow__media"><img src="src/diferencial/1.png" alt="Produção"></div>
+          <div class="pshow__body">
+            <span class="pshow__num">01 / 05</span>
+            <h3>Produção</h3>
+            <p>Aumentar a capacidade produtiva e a qualidade agrícola, investindo em solo, água e genética das culturas para colher mais e melhor a cada campanha.</p>
+          </div>
+        </article>
+        <article class="pshow__slide" data-pshow-slide>
+          <div class="pshow__media"><img src="src/diferencial/2.png" alt="Gestão"></div>
+          <div class="pshow__body">
+            <span class="pshow__num">02 / 05</span>
+            <h3>Gestão</h3>
+            <p>Aplicar princípios empresariais à actividade agrícola — planeamento, controlo de custos e indicadores de desempenho — para transformar cada exploração numa operação profissional.</p>
+          </div>
+        </article>
+        <article class="pshow__slide" data-pshow-slide>
+          <div class="pshow__media"><img src="src/diferencial/3.png" alt="Tecnologia"></div>
+          <div class="pshow__body">
+            <span class="pshow__num">03 / 05</span>
+            <h3>Tecnologia</h3>
+            <p>Informação, mecanização, irrigação e agricultura de precisão, aplicadas sempre que economicamente viáveis, para produzir mais com menos recursos.</p>
+          </div>
+        </article>
+        <article class="pshow__slide" data-pshow-slide>
+          <div class="pshow__media"><img src="src/diferencial/4.png" alt="Mercado"></div>
+          <div class="pshow__body">
+            <span class="pshow__num">04 / 05</span>
+            <h3>Mercado</h3>
+            <p>Produzir com base na procura dos mercados e não apenas na capacidade de cultivo, aproximando cada campanha das necessidades reais dos compradores.</p>
+          </div>
+        </article>
+        <article class="pshow__slide" data-pshow-slide>
+          <div class="pshow__media"><img src="src/diferencial/5.png" alt="Valor local"></div>
+          <div class="pshow__body">
+            <span class="pshow__num">05 / 05</span>
+            <h3>Valor local</h3>
+            <p>Produzir, transformar e comercializar dentro de Angola, gerando a maior parte do valor económico e do emprego directamente no país.</p>
+          </div>
+        </article>
+      </div>
+
+      <button type="button" class="pshow__arrow pshow__arrow--next" data-pshow-next aria-label="Próximo pilar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+
+    <div class="pshow__dots" data-pshow-dots>
+      <button type="button" class="is-active" aria-label="Ir para Produção" aria-current="true"></button>
+      <button type="button" aria-label="Ir para Gestão"></button>
+      <button type="button" aria-label="Ir para Tecnologia"></button>
+      <button type="button" aria-label="Ir para Mercado"></button>
+      <button type="button" aria-label="Ir para Valor local"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODELO DE NEGÓCIO (sticky stack) ============ -->
+<section class="sec sec--grey" id="modelo">
+  <div class="wrap stack">
+    <div class="stack__text">
+      <h2 data-rev data-d="1">Cinco fases, um sistema integrado</h2>
+      <p class="lede" data-rev data-d="2">Cada fase alimenta a seguinte. O resultado de uma campanha é reinvestido em mecanização, irrigação, área produtiva e agroindústria — é assim que a operação escala sem perder previsibilidade.</p>
+      <a href="#parcerias" class="btn" data-rev data-d="3">Explorar parcerias
+        <i class="arw" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </i></a>
+    </div>
+
+    <div class="stack__cards">
+      <div class="stack__card" style="--i:0;--rot:-1.1deg">
+        <div class="frame frame--4x3">
+          <img class="frame__img" src="src/passos/1.png" alt="Produção">
+        </div>
+      </div>
+      <div class="stack__card" style="--i:1;--rot:.8deg">
+        <div class="frame frame--4x3 frame--maize">
+          <img class="frame__img" src="src/passos/2.png" alt="Pós-colheita">
+        </div>
+      </div>
+      <div class="stack__card" style="--i:2;--rot:-.6deg">
+        <div class="frame frame--4x3 frame--soil">
+          <img class="frame__img" src="src/passos/3.png" alt="Transformação">
+        </div>
+      </div>
+      <div class="stack__card" style="--i:3;--rot:1deg">
+        <div class="frame frame--4x3 frame--sky">
+          <img class="frame__img" src="src/passos/4.png" alt="Comercialização">
+        </div>
+      </div>
+      <div class="stack__card" style="--i:4;--rot:-.8deg">
+        <div class="frame frame--4x3">
+          <img class="frame__img" src="src/passos/5.png" alt="Expansão">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIDERANÇA ============ -->
+<section class="sec sec--dark sec--photo" id="lideranca">
+  <div class="frame" aria-hidden="true">
+    <img class="frame__img" data-par data-speed="0.12" src="src/lider/liderbg.jfif" alt="">
+  </div>
+  <div class="wrap lead">
+    <div class="split__media">
+      <div class="frame frame--4x5" data-rev>
+        <img class="frame__img" src="src/lider/lider.jfif" alt="Retrato de Moisés Dumbo">
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow" style="color:var(--maize)" data-rev>Director Executivo</p>
+      <blockquote data-rev data-d="1">“A agricultura angolana não deve ser vista apenas como um sector de produção, mas como uma plataforma para construir empresas, empregos, indústria e prosperidade.”</blockquote>
+      <p class="lead__by" data-rev data-d="2">Moisés Dumbo · Tuala Kumoxi</p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUSTENTABILIDADE + IMPACTO ============ -->
+<section class="sec sec--grey" id="impacto">
+  <div class="wrap cols2" style="align-items:start">
+    <div>
+      <h2 style="font-size:var(--step-2);max-width:16ch;margin-top:.8rem" data-rev data-d="1">A produtividade de longo prazo depende dos recursos naturais</h2>
+      <ul class="bullets" style="margin-top:1.5rem" data-rev data-d="2">
+        <li>Uso eficiente da água e conservação dos solos</li>
+        <li>Rotação e diversificação de culturas</li>
+        <li>Utilização racional de insumos</li>
+        <li>Redução de perdas pós-colheita</li>
+        <li>Gestão adequada de resíduos e eficiência energética</li>
+        <li>Protecção dos ecossistemas locais</li>
+      </ul>
+    </div>
+    <div>
+      <div class="frame frame--16x9 vid-frame" style="margin-bottom:1.5rem" data-rev>
+        <video class="frame__img" data-autosound
+               autoplay muted loop playsinline preload="auto"
+               src="src/video/Breathtaking%20Drone%20footage%20filmed%20throughout%20Africa.mp4"></video>
+        <button type="button" class="vid-frame__sound" data-sound-toggle aria-label="Activar som" aria-pressed="false">
+          <svg class="ico-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          <svg class="ico-unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+        </button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:0.8rem" data-rev data-d="1">
+        <span style="padding:10px 15px;background-color:rgb(71, 138, 71);color:white;border-radius: 1rem;">Emprego</span>
+        <span style="padding:10px 15px;background-color:rgb(71, 138, 71);color:white;border-radius: 1rem;">Capacitação</span>
+        <span style="padding:10px 15px;background-color:rgb(71, 138, 71);color:white;border-radius: 1rem;">Comunidades e jovens</span>
+        <span style="padding:10px 15px;background-color:rgb(71, 138, 71);color:white;border-radius: 1rem;">Segurança alimentar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIORIDADES ============ -->
+<section class="sec sec--tight" id="prioridades">
+  <div class="wrap">
+    <div class="head" data-rev>
+      <p class="eyebrow">Prioridades estratégicas</p>
+      <h2 style="margin-top:.8rem">Três horizontes</h2>
+    </div>
+    <div class="terms">
+      <div class="term" data-rev>
+        <h3><small>Curto prazo</small>Estruturar</h3>
+        <p class="lede">Estruturar a operação agrícola, aumentar a produtividade, melhorar a gestão financeira e operacional, desenvolver canais de comercialização e criar uma identidade corporativa forte.</p>
+      </div>
+      <div class="term" data-rev data-d="1">
+        <h3><small>Médio prazo</small>Expandir</h3>
+        <p class="lede">Expandir a área produtiva, aumentar a mecanização, implementar sistemas de irrigação, desenvolver armazenamento próprio e criar unidades de transformação.</p>
+      </div>
+      <div class="term" data-rev data-d="2">
+        <h3><small>Longo prazo</small>Integrar</h3>
+        <p class="lede">Construir uma plataforma agroindustrial integrada, expandir para diferentes províncias, desenvolver marcas próprias, entrar em mercados regionais e tornar-se uma referência agroindustrial angolana.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARCERIAS ============ -->
+<section class="sec sec--grey" id="parcerias">
+  <div class="wrap">
+    <div class="head head--center" data-rev>
+      <p class="eyebrow">Parcerias</p>
+      <h2 style="margin-top:.8rem">Com quem queremos trabalhar</h2>
+    </div>
+    <div class="cols2" style="align-items:start">
+      <form class="p-form" data-partner-form aria-labelledby="pf-heading" data-rev>
+        <h3 id="pf-heading">Fale connosco</h3>
+        <p class="p-form__intro">Diga-nos quem é e o tipo de parceria que procura — respondemos o mais brevemente possível.</p>
+
+        <div class="p-form__row">
+          <div class="p-form__field">
+            <label for="pf-nome">Nome completo</label>
+            <input type="text" id="pf-nome" name="nome" autocomplete="name" required>
+          </div>
+          <div class="p-form__field">
+            <label for="pf-email">Email</label>
+            <input type="email" id="pf-email" name="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="p-form__row">
+          <div class="p-form__field">
+            <label for="pf-organizacao">Organização <small>(opcional)</small></label>
+            <input type="text" id="pf-organizacao" name="organizacao" autocomplete="organization">
+          </div>
+          <div class="p-form__field">
+            <label for="pf-tipo">Tipo de parceria</label>
+            <select id="pf-tipo" name="tipo" required>
+              <option value="" selected disabled>Seleccione uma opção</option>
+              <option>Investidores privados</option>
+              <option>Instituições financeiras</option>
+              <option>Fornecedores</option>
+              <option>Grandes compradores</option>
+              <option>Instituições públicas</option>
+              <option>Parceiros internacionais</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="p-form__field">
+          <label for="pf-mensagem">Mensagem</label>
+          <textarea id="pf-mensagem" name="mensagem" rows="5" placeholder="Conte-nos sobre a sua proposta ou área de interesse…" required></textarea>
+        </div>
+
+        <button type="submit" class="btn"><span data-form-label>Enviar mensagem</span>
+          <i class="arw" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </i></button>
+        <p class="p-form__note" data-form-note role="status" aria-live="polite" hidden>Mensagem registada. Entraremos em contacto brevemente.</p>
+      </form>
+
+      <div class="partners">
+        <article class="partners__item" data-rev><span class="tag">Investidores privados</span><h3>Capital</h3><p>Para expansão produtiva e agroindustrial.</p></article>
+        <article class="partners__item" data-rev data-d="2"><span class="tag">Fornecedores</span><h3>Insumos</h3><p>Sementes, fertilizantes, maquinaria, irrigação e tecnologia.</p></article>
+        <article class="partners__item" data-rev data-d="1"><span class="tag">Instituições públicas</span><h3>Programas</h3><p>Desenvolvimento agrícola, segurança alimentar e desenvolvimento rural.</p></article>
+        <article class="partners__item" data-rev data-d="2"><span class="tag">Parceiros internacionais</span><h3>Cooperação</h3><p>Programas de desenvolvimento, fundos de investimento e instituições multilaterais.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="wrap" style="padding-bottom:var(--sec-y)">
+  <div class="cta">
+    <div class="frame">
+      <img class="frame__img" data-par data-speed="0.12" src="src/cta.jpg" alt="Paisagem agrícola ao fim do dia">
+    </div>
+    <div class="cta__scrim"></div>
+    <div class="cta__in">
+      <p class="eyebrow" style="color:var(--maize)" data-rev>Vamos falar</p>
+      <h2 data-rev data-d="1">Angola tem terra, recursos e mercado. Falta transformar potencial em produção.</h2>
+      <p data-rev data-d="2">Se representa um investidor, uma instituição financeira, um fornecedor ou um grande comprador, queremos conhecer o seu projecto.</p>
+      <a href="mailto:geral@tualakumoxi.co.ao" class="btn" data-rev data-d="3">Contactar a Tuala Kumoxi
+        <i class="arw" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </i></a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__in">
+    <span>Agricultura com visão · Produção com propósito · Negócio com impacto ·</span>
+    <span>Agricultura com visão · Produção com propósito · Negócio com impacto ·</span>
+  </div>
+</div>
+
+<footer class="wrap foot">
+  <div class="foot__grid">
+    <div>
+      <a href="#topo" class="brand" style="gap:.4rem"><b style="font-size:1.9rem">TUALA KUMOXI</b></a>
+      <p class="lede" style="margin-top:1rem;font-size:var(--step--1);max-width:34ch">Produzimos, transformamos e comercializamos dentro de Angola, do terreno ao mercado.</p>
+    </div>
+    <div><h4>Empresa</h4><ul><li><a href="#sobre">Sobre</a></li><li><a href="#areas">Áreas de actuação</a></li><li><a href="#modelo">Modelo de negócio</a></li><li><a href="#lideranca">Liderança</a></li></ul></div>
+    <div><h4>Institucional</h4><ul><li><a href="#impacto">Sustentabilidade</a></li><li><a href="#impacto">Impacto social</a></li><li><a href="#parcerias">Parcerias</a></li></ul></div>
+    <div><h4>Contactos</h4><ul><li>Director Executivo: Moisés Dumbo</li><li>Sede: Angola</li><li><a href="mailto:geral@tualakumoxi.co.ao">geral@tualakumoxi.co.ao</a></li></ul></div>
+  </div>
+  <div class="foot__base">
+    <span>© 2026 Tuala Kumoxi · Portfólio institucional</span>
+    <span>Dados sectoriais: Ministério da Agricultura e Florestas · Banco Mundial</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
